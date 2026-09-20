@@ -1,0 +1,8 @@
+#!/usr/bin/env node
+
+import { runCli } from "../dist/cli/index.js";
+
+runCli().catch((err) => {
+  process.stderr.write(`Fatal error: ${err instanceof Error ? err.message : String(err)}\n`);
+  process.exit(1);
+});
